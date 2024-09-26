@@ -48,12 +48,74 @@ body {
     clear: both;
 }
 
+/* Ueberschrift styling */
+.ueberschrift {
+    display: flex;
+    justify-content: center; /* Centers the columns horizontally */
+    align-items: center; /* Centers the columns vertically */
+    gap: 30px; /* Adds space between the two lists */
+    padding: 5px; /* Space inside the container */
+    margin: 20px; /* Adds space outside the container on all sides */
+    background-color: #3B4252; /* Dunklerer Grau-Blau Hintergrund */
+    color: #D8DEE9;
+    border-radius: 8px;
+    width: calc(100% - 40px); /* Stretch to fill width minus side margins */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Ueberschrift text styling */
+.ueberschrift h1 {
+    font-weight: 2000;
+    font-size: 3.2rem;
+}
+
 /* Chatroom styling */
 .chat-container {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
+}
+
+/* Chatroom Auswahl Container */
+.chatroomAuswahl {
+    display: flex;
+    justify-content: center; /* Centers the columns horizontally */
+    align-items: center; /* Centers the columns vertically */
+    gap: 30px; /* Adds space between the two lists */
+    padding: 20px; /* Space inside the container */
+    margin: 20px; /* Adds space outside the container on all sides */
+    background-color: #3B4252; /* Dunklerer Grau-Blau Hintergrund */
+    border-radius: 8px;
+    width: calc(100% - 40px); /* Stretch to fill width minus side margins */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Liste für beide Spalten */
+.chatroomAuswahlList {
+    display: flex;
+    flex-direction: column; /* Stack links vertically within each column */
+    gap: 15px; /* Space between links */
+}
+
+/* Links */
+.chatroomAuswahlList a {
+    display: flex; /* Make the link a flex container */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    width: 150px; /* Set a fixed width for all links */
+    text-decoration: none;
+    color: #e0e0e0; /* Heller Blauton für Links */
+    background-color: #4C566A; /* Abgerundeter Hintergrund */
+    padding: 10px 0; /* Vertical padding for a better look */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover-Effekt für Links */
+.chatroomAuswahlList a:hover {
+    background-color: #81A1C1; /* Leuchtender Blau-Effekt beim Hover */
+    color: #2E3440; /* Dunkler Text beim Hover */
 }
 
 #chat {
@@ -79,6 +141,7 @@ body {
 #message-form button {
     padding: 10px;
 }
+
 
 /* Footer styling */
 .footer {
@@ -120,3 +183,4 @@ body {
     font-size: 14px;
     color: #D8DEE9; /* Lighter Gray */
 }
+
