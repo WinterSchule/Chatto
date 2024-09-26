@@ -2,9 +2,9 @@
 const socket = io();
 
 
-let chat = document.getElementById('chat');
-let messageForm = document.getElementById('message-form');
-let messageInput = document.getElementById('message-input');
+const chat = document.getElementById('chat');
+const messageForm = document.getElementById('message-form');
+const messageInput = document.getElementById('message-input');
 
 
 let username = document.getElementById('usernameselect').value; 
