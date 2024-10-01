@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <a href="#" class="logo">Logo</a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+
+
+    <div class="chat-container">
+        <div id="chat"></div>
+        <form id="message-form">
+            <input id="message-input" type="text" placeholder="Enter your message..." required autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    
+        <input id="name-form" type="text" placeholder="Enter Username" >    
+        <button id="name-submit">Submit</button>    
+
+
+    <div class="footer">
+        <!-- Social media icons (replace # with actual links) -->
+        <div class="social-media">
+            <a href="#" title="Facebook">Facebook</a> |
+            <a href="#" title="Twitter">Twitter</a> |
+            <a href="#" title="Instagram">Instagram</a>
+        </div>
+
+        <!-- Footer navigation links (replace # with actual pages) -->
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            &copy; 2024 Your Company Name. All rights reserved.
+        </div>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
