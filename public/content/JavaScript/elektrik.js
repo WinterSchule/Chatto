@@ -14,13 +14,11 @@ let username = '';
 
 function NameSubmitFunction() {
     username = nameform.value;
-    //Wenn Name-Submit-Button gedrückt dann wird das Textfeld und der Button ausgeblendet
+    // When name is submitted, hide the name form and show the message input
     nameform.style.display = 'none';
     namesubmit.style.display = 'none';
-    //Danach wird das Message Textfeld angezeigt 
     messageInput.style.display = 'initial';
     messagesubmit.style.display = 'initial';
-
 }
 
 namesubmit.addEventListener('click', NameSubmitFunction);
@@ -28,20 +26,28 @@ namesubmit.addEventListener('click', NameSubmitFunction);
 // Display message from server
 socket.on('message', (message) => {
     const p = document.createElement('p');
-    p.textContent = message;
-    chat.appendChild(p);
-    chat.scrollTop = chat.scrollHeight; // Auto scroll to the bottom
-});
 
+    // Check if it's a system message, and style it
+    if (message.system) {
+        p.style.fontStyle = 'italic';
+        p.style.color = 'gray';
+    }
+
+    // Set the actual message text
+    p.textContent = message.text;
+
+    // Append the message to the chat
+    chat.appendChild(p);
+
+    // Auto scroll to the bottom of the chat
+    chat.scrollTop = chat.scrollHeight;
+});
 
 // Send message to server
 messageForm.addEventListener('submit', (e) => {
-    //Verhindert das die Seite neu geladen wird
     e.preventDefault();
     const msg = messageInput.value;
     socket.emit('chatMessage', username + ': ' + msg);
     messageInput.value = '';
     messageInput.focus();
-
 });
-
