@@ -13,8 +13,16 @@ messagesubmit.style.display = 'none';
 let username = '';
 
 function NameSubmitFunction() {
-    username = nameform.value;
-    // When name is submitted, hide the name form and show the message input
+    username = nameform.value.trim();
+    if (username === '') {
+        alert('Please enter a valid username.');
+        return;
+    }
+
+    // Send the username to the server
+    socket.emit('setUsername', username);
+
+    // Hide the name form and show the message input form
     nameform.style.display = 'none';
     namesubmit.style.display = 'none';
     messageInput.style.display = 'initial';
@@ -27,7 +35,7 @@ namesubmit.addEventListener('click', NameSubmitFunction);
 socket.on('message', (message) => {
     const p = document.createElement('p');
 
-    // Check if it's a system message, and style it
+    // Style system messages
     if (message.system) {
         p.style.fontStyle = 'italic';
         p.style.color = 'gray';
