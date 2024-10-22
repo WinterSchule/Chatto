@@ -7,23 +7,25 @@ const messagesubmit = document.getElementById('message-submit');
 const namesubmit = document.getElementById('name-submit');
 const nameform = document.getElementById('name-form');
 
+//messageForm und messagesubmit werden anfangs ausgeblendet 
 messageInput.style.display = 'none';
 messagesubmit.style.display = 'none';
 
 let username = '';
-
+let AnonymousCounter = 1;
+//Der Inhalt des Nachrichten-Textfelds wird zum Username
 function NameSubmitFunction() {
     username = nameform.value.trim();
+
     if (username === '') {
-        alert('Please enter a valid username.');
-        return;
+        username = "Anonymous";
     }
 
     // Send the username to the server
     socket.emit('setUsername', username);
 
-    // Hide the name form and show the message input form
-    nameform.style.display = 'none';
+    //Name-Form und submit werden ausgeblendet und Message-form und submit werden eingeblendet
+    nameform.style.display = 'none';    
     namesubmit.style.display = 'none';
     messageInput.style.display = 'initial';
     messagesubmit.style.display = 'initial';
