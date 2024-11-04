@@ -7,37 +7,24 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-let users = {};  // Object to store users with their socket ID
-
 // Serve the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Handle connection event
 io.on('connection', (socket) => {
   console.log('A user connected');
-
-  // When a user connects but has no username yet, we wait for their name submission
-  socket.on('setUsername', (username) => {
-    users[socket.id] = username; // Associate the username with the socket ID
-    console.log(`${username} joined`);
-
-    // Broadcast a system message that a user joined
-    socket.broadcast.emit('message', { text: `${username} has joined the chat`, system: true });
-  });
+  
+  // Broadcast when a user connects
+  socket.broadcast.emit('message', 'A user has joined the chat');
 
   // Listen for chatMessage event from client
   socket.on('chatMessage', (msg) => {
-    io.emit('message', { text: msg, system: false }); // Broadcast the regular chat message
+    io.emit('message', msg); // Broadcast message to all clients
   });
 
-  // Run when client disconnects (only emit message if the user exists)
+  // Run when client disconnects
   socket.on('disconnect', () => {
-    const username = users[socket.id]; // Retrieve the username of the disconnected user
-    if (username) {
-      console.log(`${username} left`);
-      io.emit('message', { text: `${username} has left the chat`, system: true });
-      delete users[socket.id]; // Remove the user from the list
-    }
+    io.emit('message', 'A user has left the chat');
   });
 });
 
