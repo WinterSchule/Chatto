@@ -10,66 +10,71 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- Die Navbar -->
-        <div class="navbar" id="navbar">
-            <a href="index.html" class="logo">Logo</a>
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </div>
-        </div>
 
-        <!-- Die Ueberschrift -->
-        <div class="ueberschrift">
-            <h1>Chatauswahl</h1>
-        </div>
 
-        <!-- Die Serverauswahl -->
-        <div class="chatroomAuswahl">
-            <div class="inner-container">
-                <div class="chatroomAuswahlList chatroomAuswahlListLinks">
-                    <a href="#">Programming</a>
-                    <a href="content/elektrik-chatroom.html">Elektrik</a>
-                </div>
-                <div class="chatroomAuswahlList chatroomAuswahlListLinks">
-                    <a href="#">Netzwerktechnik</a>
-                    <a href="#">Sport</a>
-                </div>
-                <div class="chatroomAuswahlList chatroomAuswahlListRechts">
-                    <a href="#">Tiere</a>
-                    <a href="#">Musik</a>
-                </div>
-                <div class="chatroomAuswahlList chatroomAuswahlListRechts">
-                    <a href="#">Mathematik</a>
-                    <a href="#">Deutsch</a>
-                </div>
-                <div class="chatroomAuswahlList chatroomAuswahlListRechts">
-                    <a href="#">Englisch</a>
-                    <a href="#">Spiele</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <!-- Footer-Creations -->
-            <div class="footer-links">
-                <a href="#" title="About">About</a> |
-                <a href="#" title="Services">Services</a> |
-                <a href="#" title="Contact">Contact</a>
-            </div>
-
-            <!-- Copyright -->
-            <div class="copyright">
-                &copy; 2024 Chatto. All rights reserved.
-            </div>
+    <div class="navbar">
+        <a href="index.html" class="logo">Logo</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
         </div>
     </div>
 
+
+
+    <!-- Die Ueberschrift -->
+    <div class="ueberschrift">
+        <h1>Select Chat</h1>
+    </div>
+
+
+    <!-- Die Serverauswahl -->
+    <div class="chatroomAuswahl">
+        <div class="chatroomAuswahlList chatroomAuswahlListLinks">
+            <a href="#">Programming</a>
+            <a href="content/elektrik-chatroom.html">Electrics</a>
+        </div>
+        <div class="chatroomAuswahlList chatroomAuswahlListLink">
+            <a href="#">Networking</a>
+            <a href="#">Sport</a>
+        </div>
+        <div class="chatroomAuswahlList chatroomAuswahlListRechts">
+            <a href="#">Animals</a>
+            <a href="#">Music</a>
+        </div>
+
+        <div class="chatroomAuswahlList chatroomAuswahlListRechts">
+            <a href="#">Maths</a>
+            <a href="#">German</a>
+        </div>
+        <div class="chatroomAuswahlList chatroomAuswahlListRechts">
+            <a href="#">English</a>
+            <a href="#">Games</a>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <!-- Footer-Creations -->
+        <div class="footer-links">
+            <a href="#" title="About">About</a> |
+            <a href="#" title="Services">Services</a> |
+            <a href="#" title="Contact">Contact</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            &copy; 2024 Chatto. All rights reserved.
+        </div>
+    </div>
+
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js"></script>
+
 </body>
 
 </html>
