@@ -1,0 +1,71 @@
+/* Navbar styling */
+.navbar {
+    background-color: #2E3440; /* Nordic: Dark Blue */
+    overflow: hidden;
+}
+
+.navbar .logo {
+    float: left;
+    color: #ECEFF4; /* Light Gray */
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    float: right;
+}
+
+.navbar .nav-links a {
+    float: left;
+    display: block;
+    color: #ECEFF4;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #4C566A; /* Muted Blue-Gray */
+    color: #81A1C1; /* Frost Blue */
+}
+
+.navbar::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+/* Footer styling */
+.footer {
+    background-color: #2E3440; /* Dark Blue */
+    color: #ECEFF4; /* Light Gray */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer .footer-links {
+    margin-bottom: 10px;
+}
+
+.footer .footer-links a {
+    color: #81A1C1; /* Frost Blue */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer .footer-links a:hover {
+    color: #4C566A; /* Muted Blue-Gray */
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #D8DEE9; /* Lighter Gray */
+}
