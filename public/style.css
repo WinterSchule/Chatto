@@ -1,0 +1,281 @@
+/* Grundlegende Stile für den Body */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ECEFF4; /* Hellgrauer Hintergrund */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Ensure the content area grows and pushes the footer to the bottom */
+main {
+    flex: 1;
+    padding: 20px; /* Add some padding for main content */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #2E3440; /* Nordic: Dark Blue */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Add padding for better spacing */
+}
+
+.navbar .logo {
+    color: #ECEFF4; /* Light Gray */
+    text-decoration: none;
+    font-size: 1.5rem; /* Responsive font size */
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+}
+
+.navbar .nav-links a {
+    display: block;
+    color: #ECEFF4;
+    text-align: center;
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+    text-decoration: none;
+    font-size: 1rem; /* Responsive font size */
+}
+
+.navbar .nav-links a:hover {
+    background-color: #4C566A; /* Muted Blue-Gray */
+    color: #81A1C1; /* Frost Blue */
+}
+
+/* Ueberschrift (Titel) */
+.ueberschrift {
+    display: flex;
+    justify-content: center; /* Zentriert die Titel horizontal */
+    align-items: center; /* Zentriert die Titel vertikal */
+    gap: 30px; /* Abstand zwischen den Listen */
+    padding: 5px; /* Innerer Abstand */
+    margin: 20px; /* Äußere Ränder */
+    background-color: #3B4252; /* Dunkelgrau-blauer Hintergrund */
+    color: #D8DEE9; /* Helle Textfarbe */
+    border-radius: 8px;
+    width: calc(100% - 40px); /* Breite minus Außenabstände */
+    box-sizing: border-box; /* Padding in die Breitenberechnung einbeziehen */
+}
+
+/* Stile für den Titel (h1) */
+.ueberschrift h1 {
+    font-weight: 2000;
+    font-size: 3.2rem;
+}
+
+/* Chatroom Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Chatroom Auswahl Container */
+.chatroomAuswahl {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht das Umbrechen der Elemente */
+    justify-content: center; /* Zentriert die Spalten */
+    align-items: center; /* Zentriert die Spalten vertikal */
+    gap: 30px; /* Abstand zwischen den Spalten */
+    padding: 20px;
+    margin: 20px;
+    background-color: #3B4252;
+    border-radius: 8px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+}
+
+/* Stile für jede Chatroom-Auswahl-Liste */
+.chatroomAuswahlList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Zentriert die Links innerhalb der Liste */
+    flex: 1 0 150px; /* Flexibles Layout mit minimaler Breite */
+    max-width: 200px; /* Maximale Breite für jede Liste */
+}
+
+/* Stile für die Links */
+.chatroomAuswahlList a {
+    display: flex;
+    justify-content: center;  /* Horizontale Zentrierung */
+    align-items: center;  /* Vertikale Zentrierung */
+    width: 150px; /* Feste Breite für die Links */
+    text-decoration: none;
+    color: #e0e0e0; /* Helle Farbe für Links */
+    background-color: #4C566A; /* Abgerundeter Hintergrund für Links */
+    padding: 10px 0; /* Vertikales Padding für eine bessere Optik */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover-Effekt für Links */
+.chatroomAuswahlList a:hover {
+    background-color: #81A1C1; /* Leuchtender Blau-Effekt beim Hover */
+    color: #2E3440; /* Dunkler Text beim Hover */
+}
+
+/* Chat-Bereich */
+#chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+#chat p {
+    margin: 5px 0;
+}
+
+/* Formular für Nachrichten */
+#message-form {
+    display: flex;
+}
+
+#message-form input {
+    flex: 1;
+    padding: 10px;
+}
+
+#message-form button {
+    padding: 10px;
+}
+
+/* Burger Menü - auf kleineren Bildschirmen sichtbar */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute; /* Positioniert es am rechten Rand */
+    right: 20px; /* Abstand von der rechten Seite */
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #D8DEE9;
+}
+
+/* Media Queries für kleinere Bildschirme (z.B. Tablets, Smartphones) */
+@media (max-width: 450px) {
+    /* Chatroom-Auswahl */
+    .chatroomAuswahl {
+        flex-direction: column; /* Anordnung der Listen in einer Spalte */
+        align-items: flex-start; /* Links werden am Anfang der Spalte ausgerichtet */
+    }
+
+    .chatroomAuswahlList {
+        width: 100%; /* Listen füllen die gesamte Breite */
+        text-align: center; /* Zentriert die Links innerhalb der Listen */
+        flex: unset; /* Entfernt die Flex-Eigenschaften */
+        max-width: unset; /* Entfernt die maximale Breite */
+    }
+
+    .chatroomAuswahlList a {
+        width: 100%; /* Links füllen die gesamte Breite */
+        justify-content: center; /* Horizontale Zentrierung der Links */
+    }
+
+    /* Navbar Links */
+    .navbar, .navbar .nav-links {
+        flex-direction: column; /* Stapelt die Items vertikal */
+    }
+
+    .navbar .nav-links {
+        width: 100%; /* Volle Breite der Navigation auf kleinen Bildschirmen */
+    }
+
+    .navbar .nav-links a {
+        text-align: left; /* Links werden nach links ausgerichtet */
+        padding: 10px; /* Padding anpassen */
+    }
+
+    /* Navbar Links verbergen und Burger-Menü anzeigen */
+    .nav-links {
+        display: none; /* Standardmäßig versteckt */
+        flex-direction: column;
+        width: 100%;
+        background-color: #3B4252;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px;
+    }
+
+    /* Burger Menü anzeigen */
+    .burger-menu {
+        display: flex; /* Burger Menü sichtbar machen */
+    }
+
+    .nav-links.active {
+        display: flex; /* Zeigt die Links, wenn das Menü aktiv ist */
+    }
+
+    /* Hauptinhalt */
+    main {
+        padding: 10px; /* Reduziertes Padding auf kleineren Bildschirmen */
+    }
+
+    /* Footer Links */
+    .footer .footer-links a {
+        display: block; /* Stapelt die Links vertikal */
+        margin: 5px 0; /* Margin anpassen */
+    }
+
+    /* Navbar Links */
+    .nav-links a {
+        padding: 10px 20px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+/* Footer styling */
+.footer {
+    background-color: #3B4252; /* Dunkleres Blau */
+    color: #ECEFF4; /* Helles Grau */
+    padding: 20px; /* Einheitliches Padding */
+    margin-top: auto; /* Sorgt dafür, dass der Footer am unteren Rand bleibt */
+    text-align: center; /* Zentriert den Text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.footer .footer-links {
+    margin-bottom: 10px;
+}
+
+.footer .footer-links a {
+    color: #81A1C1; /* Frost Blue */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1rem; /* Responsive font size */
+}
+
+.footer .footer-links a:hover {
+    color: #4C566A; /* Muted Blue-Gray */
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    font-size: 0.875rem; /* Responsive font size */
+    color: #D8DEE9; /* Lighter Gray */
+}
