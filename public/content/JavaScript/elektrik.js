@@ -15,12 +15,16 @@ let username = '';
 let AnonymousCounter = 1;
 //Der Inhalt des Nachrichten-Textfelds wird zum Username
 function NameSubmitFunction() {
+    
     username = nameform.value.trim();
 
     if (username === '') {
         username = "Anonymous";
     }
-
+    //limitiert die Länge des Usernames auf 30 Zeichen
+    if (username.length > 30) {
+        username = username.substring(0, 30);
+    }
     // Send the username to the server
     socket.emit('setUsername', username);
 
@@ -34,13 +38,14 @@ function NameSubmitFunction() {
 namesubmit.addEventListener('click', NameSubmitFunction);
 
 //Die NameSubmitFunction wird mit der Enter-Taste ausgeführt 
-
-document.addEventListener('keydown', function(event) {
 let isusernameactivated = false;
+document.addEventListener('keydown', function(event) {
+if (isusernameactivated !== true) {
     if (event.key === 'Enter') {
-        
-            NameSubmitFunction();     
+            NameSubmitFunction();
+            isusernameactivated = true;     
     }
+}
   });
 
 // Display message from server
