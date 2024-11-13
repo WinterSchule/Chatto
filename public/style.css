@@ -1,36 +1,35 @@
-/* Grundlegende Stile für den Body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ECEFF4; /* Hellgrauer Hintergrund */
+    background-color: #ECEFF4; /* Light background */
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-/* Ueberschrift (Titel) */
+/* Ueberschrift styling */
 .ueberschrift {
     display: flex;
-    justify-content: center; /* Zentriert die Titel horizontal */
-    align-items: center; /* Zentriert die Titel vertikal */
-    gap: 30px; /* Abstand zwischen den Listen */
-    padding: 5px; /* Innerer Abstand */
-    margin: 20px; /* Äußere Ränder */
-    background-color: #3B4252; /* Dunkelgrau-blauer Hintergrund */
-    color: #D8DEE9; /* Helle Textfarbe */
+    justify-content: center; /* Centers the columns horizontally */
+    align-items: center; /* Centers the columns vertically */
+    gap: 30px; /* Adds space between the two lists */
+    padding: 5px; /* Space inside the container */
+    margin: 20px; /* Adds space outside the container on all sides */
+    background-color: #3B4252; /* Dunklerer Grau-Blau Hintergrund */
+    color: #D8DEE9;
     border-radius: 8px;
-    width: calc(100% - 40px); /* Breite minus Außenabstände */
-    box-sizing: border-box; /* Padding in die Breitenberechnung einbeziehen */
+    width: calc(100% - 40px); /* Stretch to fill width minus side margins */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
-/* Stile für den Titel (h1) */
+/* Ueberschrift text styling */
 .ueberschrift h1 {
     font-weight: 2000;
     font-size: 3.2rem;
 }
 
-/* Chatroom Container */
+/* Chatroom styling */
 .chat-container {
     display: flex;
     flex-direction: column;
@@ -41,38 +40,34 @@ body {
 /* Chatroom Auswahl Container */
 .chatroomAuswahl {
     display: flex;
-    flex-wrap: wrap; /* Ermöglicht das Umbrechen der Elemente */
-    justify-content: center; /* Zentriert die Spalten */
-    align-items: center; /* Zentriert die Spalten vertikal */
-    gap: 30px; /* Abstand zwischen den Spalten */
-    padding: 20px;
-    margin: 20px;
-    background-color: #3B4252;
+    justify-content: center; /* Centers the columns horizontally */
+    align-items: center; /* Centers the columns vertically */
+    gap: 30px; /* Adds space between the two lists */
+    padding: 20px; /* Space inside the container */
+    margin: 20px; /* Adds space outside the container on all sides */
+    background-color: #3B4252; /* Dunklerer Grau-Blau Hintergrund */
     border-radius: 8px;
-    width: calc(100% - 40px);
-    box-sizing: border-box;
+    width: calc(100% - 40px); /* Stretch to fill width minus side margins */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
-/* Stile für jede Chatroom-Auswahl-Liste */
+/* Liste für beide Spalten */
 .chatroomAuswahlList {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center; /* Zentriert die Links innerhalb der Liste */
-    flex: 1 0 150px; /* Flexibles Layout mit minimaler Breite */
-    max-width: 200px; /* Maximale Breite für jede Liste */
+    flex-direction: column; /* Stack links vertically within each column */
+    gap: 15px; /* Space between links */
 }
 
-/* Stile für die Links */
+/* Links */
 .chatroomAuswahlList a {
-    display: flex;
-    justify-content: center;  /* Horizontale Zentrierung */
-    align-items: center;  /* Vertikale Zentrierung */
-    width: 150px; /* Feste Breite für die Links */
+    display: flex; /* Make the link a flex container */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    width: 150px; /* Set a fixed width for all links */
     text-decoration: none;
-    color: #e0e0e0; /* Helle Farbe für Links */
-    background-color: #4C566A; /* Abgerundeter Hintergrund für Links */
-    padding: 10px 0; /* Vertikales Padding für eine bessere Optik */
+    color: #e0e0e0; /* Heller Blauton für Links */
+    background-color: #4C566A; /* Abgerundeter Hintergrund */
+    padding: 10px 0; /* Vertical padding for a better look */
     border-radius: 6px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -83,7 +78,6 @@ body {
     color: #2E3440; /* Dunkler Text beim Hover */
 }
 
-/* Chat-Bereich */
 #chat {
     flex: 1;
     overflow-y: auto;
@@ -95,7 +89,6 @@ body {
     margin: 5px 0;
 }
 
-/* Formular für Nachrichten */
 #message-form {
     display: flex;
 }
@@ -107,99 +100,4 @@ body {
 
 #message-form button {
     padding: 10px;
-}
-
-/* Burger Menü - auf kleineren Bildschirmen sichtbar */
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    position: absolute; /* Positioniert es am rechten Rand */
-    right: 20px; /* Abstand von der rechten Seite */
-}
-
-.burger-line {
-    width: 25px;
-    height: 3px;
-    background-color: #D8DEE9;
-}
-
-/* Media Query für kleinere Bildschirme (z.B. Tablets) */
-@media (max-width: 768px) {
-    .chatroomAuswahl {
-        flex-direction: column; /* Anordnung der Listen in einer Spalte */
-        align-items: flex-start; /* Links werden am Anfang der Spalte ausgerichtet */
-    }
-
-    .chatroomAuswahlList {
-        width: 100%; /* Listen füllen die gesamte Breite */
-        text-align: center; /* Zentriert die Links innerhalb der Listen */
-        flex: unset; /* Entfernt die Flex-Eigenschaften */
-        max-width: unset; /* Entfernt die maximale Breite */
-    }
-
-    .chatroomAuswahlList a {
-        width: 100%; /* Links füllen die gesamte Breite */
-        justify-content: center; /* Horizontale Zentrierung der Links */
-    }
-
-    /* Navbar Links verbergen */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #3B4252;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px;
-    }
-
-    /* Burger Menü anzeigen */
-    .burger-menu {
-        display: flex;
-    }
-
-    .nav-links.active {
-        display: flex; /* Zeigt die Links, wenn das Menü aktiv ist */
-    }
-
-    /* Navbar Links */
-    .nav-links a {
-        padding: 10px 20px;
-        text-align: center;
-        width: 100%;
-    }
-}
-
-/* Footer-Stile */
-.footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #3B4252;
-    padding: 20px;
-    margin-top: auto; /* Sorgt dafür, dass der Footer am unteren Rand bleibt */
-}
-
-.footer-links {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: #e0e0e0;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    color: #81A1C1;
-}
-
-.copyright {
-    color: #e0e0e0;
-    font-size: 0.9rem;
-    margin-top: 10px;
 }

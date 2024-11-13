@@ -1,8 +1,22 @@
+ const socket = io();
 
-// Hamburger Menü Funktionalität
-const burgerMenu = document.getElementById('burger-menu');
-const navLinks = document.querySelector('.nav-links');
+        const chat = document.getElementById('chat');
+        const messageForm = document.getElementById('message-form');
+        const messageInput = document.getElementById('message-input');
 
-burgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // Toggle der "active" Klasse für das Menü
-});
+        // Display message from server
+        socket.on('message', (message) => {
+            const p = document.createElement('p');
+            p.textContent = message;
+            chat.appendChild(p);
+            chat.scrollTop = chat.scrollHeight; // Auto scroll to the bottom
+        });
+
+        // Send message to server
+        messageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const msg = messageInput.value;
+            socket.emit('chatMessage', msg);
+            messageInput.value = '';
+            messageInput.focus();
+        });
