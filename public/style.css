@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
 
 /* Ensure the content area grows and pushes the footer to the bottom */
@@ -53,7 +53,6 @@ main {
 
 .navbar .nav-links a:hover {
     background-color: #4C566A; /* Nordic: Darker Gray on hover */
-    width: 100%;
 }
 
 .burger-menu {
@@ -201,12 +200,7 @@ main {
 
     .navbar .nav-links a {
         text-align: left; /* Links werden nach links ausgerichtet */
-        padding: 10px 15px; /* Keep padding consistent */
-    }
-
-    .navbar .nav-links a:hover {
-        background-color: #4C566A; /* Change only the background color */
-        width: 100%;
+        padding: 10px; /* Padding anpassen */
     }
 
     /* Navbar Links verbergen und Burger-Menü anzeigen */
@@ -218,25 +212,16 @@ main {
         position: absolute;
         top: 60px;
         left: 0;
-        padding: 0px;
-    }
-
-
-    .navbar .nav-links.active {
-        display: flex; /* Show links when active */
-    }
-
-    /* Navbar Links */
-    .nav-links a {
-        padding: 10px 20px;
-        text-align: center;
-        width: 100%;
+        padding: 10px;
     }
 
     .burger-menu {
         display: flex; /* Show burger menu on small screens */
     }
 
+    .navbar .nav-links.active {
+        display: flex; /* Show links when active */
+    }
 
     /* Hauptinhalt */
     main {
@@ -249,7 +234,12 @@ main {
         margin: 5px 0; /* Margin anpassen */
     }
 
-
+    /* Navbar Links */
+    .nav-links a {
+        padding: 10px 20px;
+        text-align: center;
+        width: 100%;
+    }
 }
 
 
