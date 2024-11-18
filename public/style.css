@@ -27,6 +27,7 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px; /* Add padding for better spacing */
+    position: relative;
 }
 
 .navbar .logo {
@@ -50,8 +51,20 @@ main {
 }
 
 .navbar .nav-links a:hover {
-    background-color: #4C566A; /* Muted Blue-Gray */
-    color: #81A1C1; /* Frost Blue */
+    background-color: #4C566A; /* Nordic: Darker Gray on hover */
+}
+
+.burger-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #ECEFF4; /* Light Gray */
+    margin: 4px 0;
 }
 
 /* Ueberschrift (Titel) */
@@ -154,24 +167,8 @@ main {
     padding: 10px;
 }
 
-/* Burger Menü - auf kleineren Bildschirmen sichtbar */
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    position: absolute; /* Positioniert es am rechten Rand */
-    right: 20px; /* Abstand von der rechten Seite */
-}
-
-.burger-line {
-    width: 25px;
-    height: 3px;
-    background-color: #D8DEE9;
-}
-
 /* Media Queries für kleinere Bildschirme (z.B. Tablets, Smartphones) */
-@media (max-width: 450px) {
+@media (max-width: 768px) {
     /* Chatroom-Auswahl */
     .chatroomAuswahl {
         flex-direction: column; /* Anordnung der Listen in einer Spalte */
@@ -190,13 +187,14 @@ main {
         justify-content: center; /* Horizontale Zentrierung der Links */
     }
 
-    /* Navbar Links */
-    .navbar, .navbar .nav-links {
-        flex-direction: column; /* Stapelt die Items vertikal */
-    }
-
     .navbar .nav-links {
-        width: 100%; /* Volle Breite der Navigation auf kleinen Bildschirmen */
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below the navbar */
+        right: 0;
+        background-color: #2E3440; /* Match navbar background */
+        width: 100%; /* Full width */
     }
 
     .navbar .nav-links a {
@@ -216,13 +214,12 @@ main {
         padding: 10px;
     }
 
-    /* Burger Menü anzeigen */
     .burger-menu {
-        display: flex; /* Burger Menü sichtbar machen */
+        display: flex; /* Show burger menu on small screens */
     }
 
-    .nav-links.active {
-        display: flex; /* Zeigt die Links, wenn das Menü aktiv ist */
+    .navbar .nav-links.active {
+        display: flex; /* Show links when active */
     }
 
     /* Hauptinhalt */
@@ -232,7 +229,7 @@ main {
 
     /* Footer Links */
     .footer .footer-links a {
-        display: block; /* Stapelt die Links vertikal */
+        display: flexbox; /* Stapelt die Links vertikal */
         margin: 5px 0; /* Margin anpassen */
     }
 
