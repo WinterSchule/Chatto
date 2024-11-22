@@ -168,6 +168,10 @@ main {
     padding: 10px;
 }
 
+company-info {
+    padding-left: 20px;
+}
+
 /* Media Queries für kleinere Bildschirme (z.B. Tablets, Smartphones) */
 @media (max-width: 768px) {
     /* Chatroom-Auswahl */
