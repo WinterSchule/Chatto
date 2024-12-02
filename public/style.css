@@ -21,6 +21,10 @@ main {
     padding: 20px; /* Add some padding for main content */
 }
 
+img {
+    width: 85px;
+}
+
 /* Navbar styling */
 .navbar {
     background-color: #2E3440; /* Nordic: Dark Blue */
@@ -71,9 +75,9 @@ main {
 /* Ueberschrift (Titel) */
 .ueberschrift {
     display: flex;
+    flex-direction: column;
     justify-content: center; /* Zentriert die Titel horizontal */
     align-items: center; /* Zentriert die Titel vertikal */
-    gap: 30px; /* Abstand zwischen den Listen */
     padding: 5px; /* Innerer Abstand */
     margin: 20px; /* Äußere Ränder */
     background-color: #3B4252; /* Dunkelgrau-blauer Hintergrund */
@@ -85,8 +89,19 @@ main {
 
 /* Stile für den Titel (h1) */
 .ueberschrift h1 {
-    font-weight: 2000;
-    font-size: 3.2rem;
+    margin: 2px;
+}
+
+#ueberschrift-top {
+    margin-top: 1em;
+    font-size: 3.6rem;
+    font-weight: 2200;
+}
+
+#ueberschrift-bottom {
+    margin-bottom: 1em;
+    font-size: 3.1rem;
+    font-weight: 1900;
 }
 
 /* Chatroom Container */
