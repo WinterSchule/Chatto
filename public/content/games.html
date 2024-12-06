@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Chatroom</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <a href="../index.html" class="logo"><img src="../img/Logo.png" alt="Chatto"></a>
+        <div class="burger-menu" id="burger-menu">
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../impressum.html">Impressum</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </div>
+
+
+
+    <div class="chat-container">
+        <div id="chat"></div>
+        <form id="message-form">
+            <input id="message-input" type="text" placeholder="Enter your message..." required autocomplete="off">
+            <button id="message-submit" type="submit">Send</button>  
+             
+            <input id="name-form" type="text" placeholder="Enter Username">
+            <button id="name-submit">Submit</button>
+        </form>
+    </div>
+
+
+
+    <div class="footer">
+        <!-- Footer-Creations -->
+        <div class="footer-links">
+            <a href="../about.html" title="About">About</a>
+            <a href="../impressum.html" title="Services">Impressum</a>
+            <a href="../contact.html" title="Contact">Contact</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            &copy; 2024 Chatto. All rights reserved.
+        </div>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="JavaScript/games.js"></script>
+    <script src="../index.js"></script>
+
+</body>
+
+</html>
