@@ -1,4 +1,4 @@
-const socket = io('/elektrik'); // Connect to the elektrik namespace
+const socket = io('/programming'); // Connect to the programming namespace
 
 const chat = document.getElementById('chat');
 const messageForm = document.getElementById('message-form');
@@ -7,50 +7,50 @@ const messagesubmit = document.getElementById('message-submit');
 const namesubmit = document.getElementById('name-submit');
 const nameform = document.getElementById('name-form');
 
-//messageForm und messagesubmit werden anfangs ausgeblendet 
+// Initially hide the message form and submit button
 messageInput.style.display = 'none';
 messagesubmit.style.display = 'none';
 
+// Handle connection event
 socket.on('connect', () => {
-    console.log('Connected to the chat room');
+    console.log('Connected to the programming chat room');
 });
 
+// Set username function
 let username = '';
-let AnonymousCounter = 1;
-//Der Inhalt des Nachrichten-Textfelds wird zum Username
 function NameSubmitFunction() {
-    
     username = nameform.value.trim();
 
     if (username === '') {
         username = "Anonymous";
     }
-    //limitiert die Länge des Usernames auf 30 Zeichen
+    // Limit username length to 30 characters
     if (username.length > 30) {
         username = username.substring(0, 30);
     }
     // Send the username to the server
     socket.emit('setUsername', username);
 
-    //Name-Form und submit werden ausgeblendet und Message-form und submit werden eingeblendet
+    // Hide name form and show message form
     nameform.style.display = 'none';    
     namesubmit.style.display = 'none';
     messageInput.style.display = 'initial';
     messagesubmit.style.display = 'initial';
 }
-//Die NameSubmitFunction wird mit den Mausklick ausgeführt 
+
+// Execute NameSubmitFunction on button click
 namesubmit.addEventListener('click', NameSubmitFunction);
 
-//Die NameSubmitFunction wird mit der Enter-Taste ausgeführt 
+// Execute NameSubmitFunction on Enter key press
 let isusernameactivated = false;
 document.addEventListener('keydown', function(event) {
-if (isusernameactivated !== true) {
-    if (event.key === 'Enter') {
+    if (!isusernameactivated) {
+        if (event.key === 'Enter') {
             NameSubmitFunction();
             isusernameactivated = true;     
+        }
     }
-}
-  });
+});
 
 // Display message from server
 socket.on('message', (message) => {
@@ -76,7 +76,9 @@ socket.on('message', (message) => {
 messageForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const msg = messageInput.value;
-    socket.emit('chatMessage', username + ': ' + msg);
-    messageInput.value = '';
-    messageInput.focus();
+    if (msg.trim() !== '') { // Check if the message is not empty
+        socket.emit('chatMessage', username + ': ' + msg); // Emit the message to the server
+        messageInput.value = ''; // Clear the input field
+        messageInput.focus(); // Focus back on the input field
+    }
 });
